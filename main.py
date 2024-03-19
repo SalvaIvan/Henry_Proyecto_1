@@ -69,7 +69,7 @@ def UsersRecommend(año: int):
 @app.get('/UserNotRecommend')
 def UserNotRecommend(year: int):
     
-    df = df_UserRecommend[(df_UserRecommend['year_posted'] == año) & (df_UserRecommend['recommend'] == False)]
+    df = df_UserRecommend[(df_UserRecommend['year_posted'] == year) & (df_UserRecommend['recommend'] == False)]
 
     top_juegos = df['title'].value_counts().head(3)
 
