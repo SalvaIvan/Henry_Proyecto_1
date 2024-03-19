@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from typing import Optional
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
@@ -7,11 +7,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
-df_PlayTimeGenre = pd.read_csv("./data/df_PlayTimeGenre.csv")
-df_UserForGenre = pd.read_csv("./data/df_UserForGenre.csv")
-df_UserRecommend = pd.read_csv("./data/df_UserRecommend.csv")
-df_Sentiment_Analysis = pd.read_csv("./data/df_Sentiment_Analysis.csv")
-df_ml = pd.read_csv("./data/df_MLOps.csv")
+df_PlayTimeGenre = pd.read_csv("/data/df_PlayTimeGenre.csv")
+df_UserForGenre = pd.read_csv("/data/df_UserForGenre.csv")
+df_UserRecommend = pd.read_csv("/data/df_UserRecommend.csv")
+df_Sentiment_Analysis = pd.read_csv("/data/df_Sentiment_Analysis.csv")
+df_ml = pd.read_csv("/data/df_MLOps.csv")
 
 
 @app.get('/PlayTimeGenre')
