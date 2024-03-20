@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = FastAPI()
 
 df_PlayTimeGenre = pd.read_csv("df_PlayTimeGenre.csv")
-df_UserForGenre = pd.read_csv("df_UserForGenre.csv")
+#df_UserForGenre = pd.read_csv("df_UserForGenre.csv")
 df_UserRecommend = pd.read_csv("df_UserRecommend.csv")
 df_Sentiment_Analysis = pd.read_csv("df_Sentiment_Analysis.csv")
 df_ml = pd.read_csv("df_MLOps.csv")
@@ -37,8 +37,8 @@ def PlayTimeGenre(genero: str):
     return respuesta
     
     
-@app.get('/UserForGenre')
-def UserForGenre(genero: str):
+""""#@app.get('/UserForGenre')
+#def UserForGenre(genero: str):
     filtro_genero = df_UserForGenre['genres'].str.contains(genero, case=False, na=False)
     df_filtrado = df_UserForGenre[filtro_genero]
 
@@ -52,7 +52,7 @@ def UserForGenre(genero: str):
     resultado_final = [{'Año': int(row['year']), 'Horas': int(row['playtime_forever'])} for _, row in df_usuario.iterrows()]
     
     return {"Usuario con más horas jugadas para Género {}:".format(genero): usuario_max_playtime, "Horas jugadas": resultado_final}
-
+"""
 
 @app.get('/UsersRecommend')
 def UsersRecommend(año: int):
